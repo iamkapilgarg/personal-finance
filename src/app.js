@@ -1,4 +1,3 @@
-console.log('kapil hello')
 const path = require('path')
 const express = require('express')
 const hbs = require('hbs')
@@ -23,6 +22,24 @@ app.get('', (req, res) => {
   res.render('index', {
       title: 'Personal Finance',
       name: 'Kapil Garg'
+  })
+})
+
+//Main Logic here
+app.get('/finance',(req, res) => {
+  console.log('kapil')
+  res.send({
+    labels: ['abc','def','ghi'],
+    datasets:[
+      {
+        label: 'Population',
+        data: [100000, 200000, 250000]
+      },
+      {
+        label: 'Income',
+        data: [10000, 20000, 25000]
+      }
+    ]
   })
 })
 
